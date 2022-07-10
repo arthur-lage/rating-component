@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Overpass", sans-serif;
+}
+
+:root {
+  --orange: hsl(25, 97%, 53%);
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(216, 12%, 54%);
+  --medium-grey-low-opacity: hsl(216, 12%, 54%, 0.25);
+  --medium-grey-super-low-opacity: hsl(216, 12%, 54%, 0.1);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: var(--very-dark-blue);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background: var(--dark-blue);
+  padding: 3rem;
+  border-radius: 2.5rem;
+  width: 45rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card .star-wrapper {
+  display: flex;
+  width: 5rem;
+  height: 5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: var(--medium-grey-low-opacity);
+  border-radius: 50%;
+}
+
+.card .title {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+  color: var(--white);
+}
+
+.card .description {
+  font-size: 1.8rem;
+  color: var(--light-grey);
+}
+
+.card .options {
+  display: flex;
+  align-items: center;
+  margin: 3rem 0;
+  justify-content: space-between;
+}
+
+.card .options .option {
+  color: var(--light-grey);
+  background-color: var(--medium-grey-low-opacity);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s ease;
+  width: 5.6rem;
+  font-weight: 700;
+  border: 0;
+  height: 5.6rem;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .options .option:hover:not(.selected) {
+  color: var(--white);
+  background: var(--medium-grey);
+}
+
+.card .options .option.selected {
+  background: var(--orange);
+  color: var(--white);
+}
+
+.card #submit {
+  color: var(--white);
+  background-color: var(--orange);
+  padding: 1rem;
+  border-radius: 50rem;
+  border: 0;
+  font-weight: 700;
+  transition: 0.2s ease;
+  width: 100%;
+  font-size: 1.8rem;
+  cursor: pointer;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+}
+
+.card #submit:hover {
+  color: var(--orange);
+  background: var(--white);
+}
+
+.card.form .thank-you-screen {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+.card.thank-you .form-screen {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+.card.thank-you .thank-you-screen {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.card.thank-you .thank-you-screen img {
+  margin-bottom: 3rem;
+}
+
+.card.thank-you .thank-you-screen span {
+  background: var(--medium-grey-super-low-opacity);
+  color: var(--orange);
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  border-radius: 50rem;
+}
+
+.card.thank-you .thank-you-screen p {
+  font-size: 1.72rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: end;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 500px) {
+  .card {
+    width: 40rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .card {
+    width: 35rem;
+  }
+
+  .card .options .option {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+@media screen and (max-width: 368px) {
+  .card {
+    width: 30rem;
+  }
+
+  .card .description {
+    font-size: 1.7rem;
+  }
+
+  .card .options .option {
+    width: 4rem;
+    height: 4rem;
+  }
+}
